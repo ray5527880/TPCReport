@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TPC_Report
+namespace TPC_Setup
 {
     static class Program
     {

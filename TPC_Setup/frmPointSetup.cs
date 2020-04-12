@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TPC_Report
+namespace TPC_Setup
 {
-    public partial class Form1 : Form
+    public partial class frmPointSetup : Form
     {
-        public Form1()
+        public frmPointSetup()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

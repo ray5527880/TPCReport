@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8570EE1-7191-44FF-8939-6A4B1E2D10F4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TPC_Setup</RootNamespace>
+    <AssemblyName>TPC_Setup</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frm161KVSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm161KVSetup.Designer.cs">
+      <DependentUpon>frm161KVSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCBSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCBSetup.Designer.cs">
+      <DependentUpon>frmCBSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFeederSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFeederSetup.Designer.cs">
+      <DependentUpon>frmFeederSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIEDSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIEDSetup.Designer.cs">
+      <DependentUpon>frmIEDSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPointSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPointSetup.Designer.cs">
+      <DependentUpon>frmPointSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportSetup.Designer.cs">
+      <DependentUpon>frmReportSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRP161KVSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRP161KVSetup.Designer.cs">
+      <DependentUpon>frmRP161KVSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRPCBSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRPCBSetup.Designer.cs">
+      <DependentUpon>frmRPCBSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRPEventSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRPEventSetup.Designer.cs">
+      <DependentUpon>frmRPEventSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRPFeederSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRPFeederSetup.Designer.cs">
+      <DependentUpon>frmRPFeederSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRPHistorySetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRPHistorySetup.Designer.cs">
+      <DependentUpon>frmRPHistorySetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRPTranformerSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRPTranformerSetup.Designer.cs">
+      <DependentUpon>frmRPTranformerSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStationSetupMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStationSetupMenu.Designer.cs">
+      <DependentUpon>frmStationSetupMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTranformSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTranformSetup.Designer.cs">
+      <DependentUpon>frmTranformSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frm161KVSetup.resx">
+      <DependentUpon>frm161KVSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCBSetup.resx">
+      <DependentUpon>frmCBSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFeederSetup.resx">
+      <DependentUpon>frmFeederSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIEDSetup.resx">
+      <DependentUpon>frmIEDSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPointSetup.resx">
+      <DependentUpon>frmPointSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportSetup.resx">
+      <DependentUpon>frmReportSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRP161KVSetup.resx">
+      <DependentUpon>frmRP161KVSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRPCBSetup.resx">
+      <DependentUpon>frmRPCBSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRPEventSetup.resx">
+      <DependentUpon>frmRPEventSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRPFeederSetup.resx">
+      <DependentUpon>frmRPFeederSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRPHistorySetup.resx">
+      <DependentUpon>frmRPHistorySetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRPTranformerSetup.resx">
+      <DependentUpon>frmRPTranformerSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStationSetupMenu.resx">
+      <DependentUpon>frmStationSetupMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTranformSetup.resx">
+      <DependentUpon>frmTranformSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
