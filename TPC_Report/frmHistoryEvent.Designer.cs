@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnPoint = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.cbxLevel = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,38 +42,37 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbxLevel = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnClk = new System.Windows.Forms.Button();
+            this.colorProgressBar1 = new PowerReport.ColorProgressBar();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnPoint
             // 
-            this.button2.Image = global::TPC_Report.Properties.Resources.print;
-            this.button2.Location = new System.Drawing.Point(980, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 46);
-            this.button2.TabIndex = 43;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPoint.Image = global::TPC_Report.Properties.Resources.print;
+            this.btnPoint.Location = new System.Drawing.Point(980, 0);
+            this.btnPoint.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPoint.Name = "btnPoint";
+            this.btnPoint.Size = new System.Drawing.Size(46, 46);
+            this.btnPoint.TabIndex = 43;
+            this.btnPoint.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnExcel
             // 
-            this.button1.Image = global::TPC_Report.Properties.Resources.Excel1;
-            this.button1.Location = new System.Drawing.Point(925, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 46);
-            this.button1.TabIndex = 42;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExcel.Image = global::TPC_Report.Properties.Resources.Excel1;
+            this.btnExcel.Location = new System.Drawing.Point(925, 0);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(46, 46);
+            this.btnExcel.TabIndex = 42;
+            this.btnExcel.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnClk);
             this.groupBox1.Controls.Add(this.cbxLevel);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(268, 50);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
@@ -81,23 +81,23 @@
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             // 
-            // comboBox1
+            // cbxLevel
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(205, 45);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 25);
-            this.comboBox1.TabIndex = 6;
+            this.cbxLevel.FormattingEnabled = true;
+            this.cbxLevel.Location = new System.Drawing.Point(205, 45);
+            this.cbxLevel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbxLevel.Name = "cbxLevel";
+            this.cbxLevel.Size = new System.Drawing.Size(121, 25);
+            this.cbxLevel.TabIndex = 8;
             // 
-            // label3
+            // label7
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(205, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "事件類別";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(205, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 17);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "事件等級";
             // 
             // dateTimePicker1
             // 
@@ -106,6 +106,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(126, 25);
             this.dateTimePicker1.TabIndex = 40;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label2
             // 
@@ -135,8 +136,10 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 155);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1040, 352);
+            this.dataGridView1.Size = new System.Drawing.Size(1040, 340);
             this.dataGridView1.TabIndex = 37;
             // 
             // dateTimePicker2
@@ -176,34 +179,43 @@
             this.label6.TabIndex = 46;
             this.label6.Text = "(含)";
             // 
-            // cbxLevel
+            // btnClk
             // 
-            this.cbxLevel.FormattingEnabled = true;
-            this.cbxLevel.Location = new System.Drawing.Point(45, 45);
-            this.cbxLevel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbxLevel.Name = "cbxLevel";
-            this.cbxLevel.Size = new System.Drawing.Size(121, 25);
-            this.cbxLevel.TabIndex = 8;
+            this.btnClk.Location = new System.Drawing.Point(365, 45);
+            this.btnClk.Name = "btnClk";
+            this.btnClk.Size = new System.Drawing.Size(75, 23);
+            this.btnClk.TabIndex = 10;
+            this.btnClk.Text = "查詢";
+            this.btnClk.UseVisualStyleBackColor = false;
+            this.btnClk.Click += new System.EventHandler(this.btnClk_Click);
             // 
-            // label7
+            // colorProgressBar1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 17);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "事件等級";
+            this.colorProgressBar1.BarColor = System.Drawing.Color.LightSkyBlue;
+            this.colorProgressBar1.BorderColor = System.Drawing.Color.Black;
+            this.colorProgressBar1.FillStyle = PowerReport.ColorProgressBar.FillStyles.Solid;
+            this.colorProgressBar1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.colorProgressBar1.Location = new System.Drawing.Point(13, 501);
+            this.colorProgressBar1.Maximum = 100;
+            this.colorProgressBar1.Minimum = 0;
+            this.colorProgressBar1.Name = "colorProgressBar1";
+            this.colorProgressBar1.Size = new System.Drawing.Size(1040, 32);
+            this.colorProgressBar1.Step = 10;
+            this.colorProgressBar1.TabIndex = 59;
+            this.colorProgressBar1.Text = "colorProgressBar1";
+            this.colorProgressBar1.Value = 0;
             // 
             // frmHistoryEvent
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Gray;
+            this.Controls.Add(this.colorProgressBar1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPoint);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label2);
@@ -224,11 +236,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPoint;
+        private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -239,5 +249,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbxLevel;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnClk;
+        private PowerReport.ColorProgressBar colorProgressBar1;
     }
 }

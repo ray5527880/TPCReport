@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+using TPCReport.Core.table;
 
 namespace TPC_Report
 {
     public partial class frmHistoryLogin : UserControl
     {
-        public frmHistoryLogin()
+        ArrayList arrUserLevel;
+        TreeView _TreeView;
+        public frmHistoryLogin(TreeView treeView)
         {
+            _TreeView = treeView;
             InitializeComponent();
         }
 
@@ -30,6 +35,28 @@ namespace TPC_Report
             {
                 this.dataGridView1.Columns[ii].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             }
+            var Level = new string[]
+           {"ALL","高","中","低"};
+            ArrayList alData = new ArrayList();
+            arrUserLevel = new ArrayList();
+            for (int i = 0; i < Level.Length; i++)
+            {
+                this.cbxLevel.Items.Add("");
+                alData.Add(new DictionaryEntry(Level[i], i));
+            }
+
+            arrUserLevel = new ArrayList();
+            arrUserLevel = alData;
+
+            this.cbxLevel.DisplayMember = "Key";
+            this.cbxLevel.ValueMember = "Value";
+            this.cbxLevel.DataSource = alData;
+            arrUserLevel = alData;
+        }
+
+        private void btnClk_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

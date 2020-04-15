@@ -14,7 +14,7 @@ namespace TPC_Report
     {
         private string PowerNodeName = "電力監控報表";
         private string AlarmNodeName = "分析維護報表";
-        private string[] strReport = new string[] { "饋線", "變壓器", "161kV" };
+        private string[] strReport = new string[] { "饋線", "變壓器"};
         private string[] strType = new string[] { "日報表", "旬報表", "月報表", "報表" };
         private string[] strAReport = new string[] { "CB", "歷史警報", "歷史事件","歷史登入" };
         private int itemCount = 0;
@@ -41,7 +41,7 @@ namespace TPC_Report
             TreeNode[,] prNode = new TreeNode[5, 3];
             for (int ii = 0; ii < strReport.Length+strAReport.Length; ii++)
             {
-                if (ii < 3)
+                if (ii < strReport.Length)
                 {
                     pNode[ii] = new TreeNode();
                     pNode[ii].Text = strReport[ii];
@@ -64,7 +64,7 @@ namespace TPC_Report
                 else
                 {
                    
-                    if (ii == 3)
+                    if (ii == strReport.Length)
                     {
                         pNode[ii] = new TreeNode();
                         pNode[ii].Text = strAReport[ii - strReport.Length];
@@ -145,24 +145,24 @@ namespace TPC_Report
                         mainPanel.Controls.Add(frm);
                         break;
                     }
-                    else if (m_strReportName[i] == strReport[2] + strType[0])
-                    {
-                        var frm = new frmDay161kV();
-                        mainPanel.Controls.Add(frm);
-                        break;
-                    }
-                    else if (m_strReportName[i] == strReport[2] + strType[1])
-                    {
-                        var frm = new frmTenDay161kV();
-                        mainPanel.Controls.Add(frm);
-                        break;
-                    }
-                    else if (m_strReportName[i] == strReport[2] + strType[2])
-                    {
-                        var frm = new frmMonth161kV();
-                        mainPanel.Controls.Add(frm);
-                        break;
-                    }
+                    //else if (m_strReportName[i] == strReport[2] + strType[0])
+                    //{
+                    //    var frm = new frmDay161kV();
+                    //    mainPanel.Controls.Add(frm);
+                    //    break;
+                    //}
+                    //else if (m_strReportName[i] == strReport[2] + strType[1])
+                    //{
+                    //    var frm = new frmTenDay161kV();
+                    //    mainPanel.Controls.Add(frm);
+                    //    break;
+                    //}
+                    //else if (m_strReportName[i] == strReport[2] + strType[2])
+                    //{
+                    //    var frm = new frmMonth161kV();
+                    //    mainPanel.Controls.Add(frm);
+                    //    break;
+                    //}
                     else if (m_strReportName[i] == strAReport[0] + strType[0])
                     {
                         var frm = new frmDayCB();
@@ -183,19 +183,19 @@ namespace TPC_Report
                     }
                     else if (m_strReportName[i] == strAReport[1] + strType[3])
                     {
-                        var frm = new frmHistoryAlarm();
+                        var frm = new frmHistoryAlarm(this.treeView1);
                         mainPanel.Controls.Add(frm);
                         break;
                     }
                     else if (m_strReportName[i] == strAReport[2] + strType[3])
                     {
-                        var frm = new frmHistoryEvent();
+                        var frm = new frmHistoryEvent(this.treeView1);
                         mainPanel.Controls.Add(frm);
                         break;
                     }
                     else if (m_strReportName[i] == strAReport[3] + strType[3])
                     {
-                        var frm = new frmHistoryLogin();
+                        var frm = new frmHistoryLogin(this.treeView1);
                         mainPanel.Controls.Add(frm);
                         break;
                     }

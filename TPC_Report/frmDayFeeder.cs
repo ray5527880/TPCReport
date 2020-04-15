@@ -79,22 +79,22 @@ namespace TPC_Report
         {
             if (btnClick.Text == "查詢")
             {
-                StardRun_View();
+                StarttRun_View();
                 this.btnClick.Text = "停止";
                 DateTime startTime = Convert.ToDateTime(this.dateTimePicker1.Value.ToString("yyyy-MM-dd") + " 00:00:00");
                 DateTime endTime = Convert.ToDateTime(this.dateTimePicker1.Value.AddDays(1).ToString("yyyy-MM-dd") + " 00:00:00");
                 var _IED = (dynamic)this.cbxFeeder.SelectedItem;
                 Task.Run(() =>
                 {
-                tDemandSub1by1Hour mDemand = new tDemandSub1by1Hour(EditXml.strConnectionHistory);
-                var data = mDemand.GetDataByHour((int)_IED.Value, startTime, endTime);
-                for (int i = 0; i < 24; i++)
-                {
-                    string[] str = new string[]
+                    tDemandSub1by1Hour mDemand = new tDemandSub1by1Hour(EditXml.strConnectionHistory);
+                    var data = mDemand.GetDataByHour((int)_IED.Value, startTime, endTime);
+                    for (int i = 0; i < 24; i++)
                     {
-                        (i + 1).ToString(), startTime.ToString("yyyy-MM-dd"), string.Format(" {0:00}:00:00", i),(string)_IED.Key
-                        , data[i].Ipr.ToString(), data[i].Ips.ToString(), data[i].Ipt.ToString(), data[i].Ipn.ToString(), data[i].kWh.ToString()
-                    };
+                        string[] str = new string[]
+                        {
+                            (i + 1).ToString(), startTime.ToString("yyyy-MM-dd"), string.Format(" {0:00}:00:00", i),(string)_IED.Key
+                            , data[i].Ipr.ToString(), data[i].Ips.ToString(), data[i].Ipt.ToString(), data[i].Ipn.ToString(), data[i].kWh.ToString()
+                        };
                         Invoke(new Action(() =>
                         {
                             dataGridView1.Rows.Add(str);
@@ -114,7 +114,7 @@ namespace TPC_Report
         {
 
         }
-        private void StardRun_View()
+        private void StarttRun_View()
         {
             _treeView.Enabled = false;
             this.btn_Pie.Enabled = false;
